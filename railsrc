@@ -1,0 +1,45 @@
+#!/opt/local/bin/ruby
+
+def change_log(stream)
+  ActiveRecord::Base.logger = Logger.new(stream)
+  ActiveRecord::Base.clear_active_connections!
+  reload!
+end
+ 
+def show_log
+  change_log(STDOUT)
+end
+ 
+def hide_log
+  change_log(nil)
+end
+
+class Object
+  
+  
+  def error_messages
+    if self.respond_to?(:errors)
+      if self.errors.full_messages.any?
+        puts '', 'The following errors were found:', '=' * 75
+        self.errors.full_messages.each do |msg|
+          puts "  #{msg}"
+        end
+        puts ''
+        self.details
+      end
+    end
+  end
+  
+  def details
+    if self.respond_to?(:attributes) and self.attributes.any?
+      puts '', "Details for the #{self.class} are:", '=' * 75
+      puts "id: #{self.id}"
+      self.attributes.keys.sort.each do |k|
+        next if %w(id created_at updated_at).include?(k.to_s)
+        puts "#{k}: #{self[k]}"
+      end
+      puts ''
+    end
+  end
+  
+end
