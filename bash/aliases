@@ -32,6 +32,7 @@ alias rst='touch tmp/restart.txt'
 # misc
 alias e='exit'
 alias reload='. ~/.bash_profile'
+alias m='mate'
 
 # changing directory to projects in ~/Sites/
 function c { cd ~/Sites/$1; }
