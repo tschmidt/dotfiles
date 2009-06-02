@@ -18,7 +18,7 @@ minor fiddling.
 
 == Features
 
-I normally place all of my coding projects in ~/code, so this directory 
+I normally place all of my coding projects in ~/Sites, so this directory 
 can easily be accessed (and tab completed) with the "c" command.
 
   c exten<tab>
