@@ -37,4 +37,5 @@ alias m='mate'
 
 # changing directory to projects in ~/Sites/
 function c { cd ~/Sites/$1; }
+function h { cd ~/$1; }
 function slanted { cd ~/Sites/slanted_pixel/$1; }
