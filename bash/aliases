@@ -24,11 +24,14 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias sc='script/console'
 alias ss='script/server'
 alias sg='script/generate'
+alias sd='script/destroy'
 alias a='autotest -rails'
 alias tdlog='tail -f log/development.log'
 alias tplog='tail -f log/production.log'
 alias migrate='rake db:migrate db:test:clone'
 alias rst='touch tmp/restart.txt'
+alias model='script/generate model'
+alias migration='script/generate migration'
 
 # misc
 alias e='exit'
