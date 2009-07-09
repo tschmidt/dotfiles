@@ -33,6 +33,9 @@ alias rst='touch tmp/restart.txt'
 alias model='script/generate model'
 alias migration='script/generate migration'
 
+# jruby
+alias jgem='jruby -S gem'
+
 # misc
 alias e='exit'
 alias reload='. ~/.bash_profile'
