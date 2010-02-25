@@ -40,6 +40,10 @@ alias jgem='jruby -S gem'
 alias e='exit'
 alias reload='. ~/.bash_profile'
 alias m='mate'
+alias chruby='ruby ~/Projects/git/system/dotfiles/bash/scripts/chruby.rb'
+alias sshtb='ssh tpx-admin@75.149.208.121 -p 5022'
+alias extrevert='rake db:drop:all db:create:all; psql extension_dev < ~/Desktop/extension_dev_backup; migrate'
+alias mdown='~/Projects/ruby/scripts/markdown'
 
 # changing directory to projects in ~/Sites/
 function c { cd ~/Sites/$1; }

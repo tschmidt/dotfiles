@@ -3,6 +3,7 @@
   email = tschmidt@ext-inc.com
 [alias]
   co = checkout
+  commdiff = log --pretty=oneline --left-right
 [color]
   diff = auto
   status = auto

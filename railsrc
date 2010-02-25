@@ -15,8 +15,6 @@ def hide_log
 end
 
 class Object
-  
-  
   def error_messages
     if self.respond_to?(:errors)
       if self.errors.full_messages.any?
@@ -29,14 +27,19 @@ class Object
       end
     end
   end
+  alias :em :error_messages
   
   def details
     if self.respond_to?(:attributes) and self.attributes.any?
+      max = self.attributes.keys.map { |a| a.length }.sort.pop + 5
       puts '', "Details for the #{self.class} are:", '=' * 75
-      puts "id: #{self.id}"
+      puts sprintf("%-#{max}.#{max}s%-15.15s", "id", self.id)
       self.attributes.keys.sort.each do |k|
         next if %w(id created_at updated_at).include?(k.to_s)
-        puts "#{k}: #{self[k]}"
+        puts sprintf("%-#{max}.#{max}s%s", k, (self.try(k).blank? ? 'null' : self[k]))
+      end
+      %w(created_at updated_at).each do |k|
+        puts sprintf("%-#{max}.#{max}s%s", k, self[k.to_sym])
       end
       puts ''
     end

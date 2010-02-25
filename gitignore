@@ -4,3 +4,4 @@
 .log
 db/schema.rb
 tmp/*
+vendor/gems/*
