@@ -1,7 +1,0 @@
-.DS_Store
-.svn
-*~
-.log
-db/schema.rb
-tmp/*
-vendor/gems/*
