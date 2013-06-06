@@ -1,6 +1,6 @@
 # Terry Schmidt Dot Files
 
-This is a fork of Ryan Bates' dotfiles. You can find his repo [here](https://github.com/ryanb/dotfiles).
+These files are heavily influenced by Ryan Bates' dotfiles project. You can find his repo [here](https://github.com/ryanb/dotfiles).
 
 These are config files to set up a system the way I like it. It uses [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh).
 
