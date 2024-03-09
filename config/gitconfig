@@ -1,0 +1,12 @@
+# This is Git's per-user configuration file.
+[core]
+  user = Terry Schmidt
+  email = 12368+tschmidt@users.noreply.github.com
+  excludesfile = /Users/tschmidt/.gitignore_global
+[user]
+# Please adapt and uncomment the following lines:
+  name = Terry Schmidt
+  email = 12368+tschmidt@users.noreply.github.com
+[pull]
+  rebase = false
+

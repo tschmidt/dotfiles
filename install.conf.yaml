@@ -1,0 +1,73 @@
+- clean: [
+  '~'
+]
+
+- link:
+    ~/.config/nvim: nvim
+    ~/.gemrc: ./config/gemrc
+    ~/.gitconfig: ./config/gitconfig
+    ~/.gitignore_global: ./config/gitignore_global
+    ~/.irbrc: ./config/irbrc
+    ~/.zshrc: ./config/zshrc
+
+- shell:
+    -
+      command: >
+        if [ -d ~/.oh-my-zsh ]; then
+          echo '  already installed'
+        else
+          sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        fi
+      description: Install OhMyZsh
+      quiet: true
+      stdout: true
+    -
+      command: >
+        if type brew >/dev/null 2>/dev/null; then
+          echo '  already installed'
+        else
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        fi
+      description: Install Homebrew
+      quiet: true
+      stdout: true
+    -
+      command: >
+        if type nvim >/dev/null 2>/dev/null; then
+          echo '  already installed'
+        else
+          brew install neovim
+        fi
+      description: Install NeoVim
+      quiet: true
+      stdout: true
+    -
+      command: >
+        if brew info font-hack-nerd-font >/dev/null 2>/dev/null; then
+          echo '  already installed'
+        else
+          brew tap homebrew/cask-fonts && brew install font-hack-nerd-font
+        fi
+      description: Install NerdFonts, used by nvim-kickstart
+      quiet: true
+      stdout: true
+    -
+      command: >
+        if type fd >/dev/null 2>/dev/null; then
+          echo '  already installed'
+        else
+          brew install fd
+        fi
+      description: Install fd, used by nvim-telescope
+      quiet: true
+      stdout: true
+    -
+      command: >
+        if type rg >/dev/null 2>/dev/null; then
+          echo '  already installed'
+        else
+          brew install ripgrep
+        fi
+      description: Install ripgrep, used by nvim-telescope and nvim-kickstart
+      quiet: true
+      stdout: true
