@@ -91,4 +91,7 @@
     ~/.gitconfig: ./config/gitconfig
     ~/.gitignore_global: ./config/gitignore_global
     ~/.irbrc: ./config/irbrc
+    ~/.oh-my-zsh/custom/plugins/tschmidt:
+      create: true
+      path: ohmyzsh/plugins/tschmidt
     ~/.zshrc: ./config/zshrc
