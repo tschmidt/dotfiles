@@ -17,6 +17,7 @@
       command: >
         if type brew >/dev/null 2>/dev/null; then
           echo '  already installed'
+          brew update
         else
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         fi
@@ -31,6 +32,16 @@
           brew install neovim
         fi
       description: Install NeoVim
+      quiet: true
+      stdout: true
+    -
+      command: >
+        if brew info iterm2 >/dev/null 2>/dev/null; then
+           echo '  already installed'
+        else
+          brew install iterm2
+        fi
+      description: Install iTerm2
       quiet: true
       stdout: true
     -

@@ -19,4 +19,5 @@ cd dotfiles
 - [Homebrew](https://brew.sh/): The missing package manager for macOS (or Linux)
 - [NeoVim](https://neovim.io/): A hyperextensible Vim-based text editor
 - [Oh My Zsh](https://ohmyz.sh/): A delightful and open-source framework for Zsh
+- [iTerm2](https://iterm2.com/): macOS Terminal replacement
 - Various vim/nvim plugins that bring me development joy (see nvim/lua/custom/plugins for a full list).
