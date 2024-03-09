@@ -2,14 +2,6 @@
   '~'
 ]
 
-- link:
-    ~/.config/nvim: nvim
-    ~/.gemrc: ./config/gemrc
-    ~/.gitconfig: ./config/gitconfig
-    ~/.gitignore_global: ./config/gitignore_global
-    ~/.irbrc: ./config/irbrc
-    ~/.zshrc: ./config/zshrc
-
 - shell:
     -
       command: >
@@ -71,3 +63,21 @@
       description: Install ripgrep, used by nvim-telescope and nvim-kickstart
       quiet: true
       stdout: true
+    -
+      command: >
+        if [ -d nvim/lua/kickstart ]; then
+          echo '  already installed'
+        else
+          git clone https://github.com/nvim-lua/kickstart.nvim.git nvim
+        fi
+      description: Install nvim-kickstart
+      quiet: true
+      stdout: true
+
+- link:
+    ~/.config/nvim: nvim
+    ~/.gemrc: ./config/gemrc
+    ~/.gitconfig: ./config/gitconfig
+    ~/.gitignore_global: ./config/gitignore_global
+    ~/.irbrc: ./config/irbrc
+    ~/.zshrc: ./config/zshrc
