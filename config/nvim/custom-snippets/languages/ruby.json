@@ -1,0 +1,10 @@
+{
+  "Insert frozen string literal": {
+    "prefix": "frozen",
+    "body": [
+      "# frozen_string_literal: true",
+      "",
+      "$0"
+    ]
+  }
+}

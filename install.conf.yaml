@@ -1,97 +1,20 @@
-- clean: [
-  '~'
-]
+- defaults:
+    link:
+      relink: true
 
-- shell:
-    -
-      command: >
-        if [ -d ~/.oh-my-zsh ]; then
-          echo '  already installed'
-        else
-          sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        fi
-      description: Install OhMyZsh
-      quiet: true
-      stdout: true
-    -
-      command: >
-        if type brew >/dev/null 2>/dev/null; then
-          echo '  already installed'
-          brew update
-        else
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        fi
-      description: Install Homebrew
-      quiet: true
-      stdout: true
-    -
-      command: >
-        if type nvim >/dev/null 2>/dev/null; then
-          echo '  already installed'
-        else
-          brew install neovim
-        fi
-      description: Install NeoVim
-      quiet: true
-      stdout: true
-    -
-      command: >
-        if brew info iterm2 >/dev/null 2>/dev/null; then
-           echo '  already installed'
-        else
-          brew install iterm2
-        fi
-      description: Install iTerm2
-      quiet: true
-      stdout: true
-    -
-      command: >
-        if brew info font-hack-nerd-font >/dev/null 2>/dev/null; then
-          echo '  already installed'
-        else
-          brew tap homebrew/cask-fonts && brew install font-hack-nerd-font
-        fi
-      description: Install NerdFonts, used by nvim-kickstart
-      quiet: true
-      stdout: true
-    -
-      command: >
-        if type fd >/dev/null 2>/dev/null; then
-          echo '  already installed'
-        else
-          brew install fd
-        fi
-      description: Install fd, used by nvim-telescope
-      quiet: true
-      stdout: true
-    -
-      command: >
-        if type rg >/dev/null 2>/dev/null; then
-          echo '  already installed'
-        else
-          brew install ripgrep
-        fi
-      description: Install ripgrep, used by nvim-telescope and nvim-kickstart
-      quiet: true
-      stdout: true
-    -
-      command: >
-        if [ -d nvim/lua/kickstart ]; then
-          echo '  already installed'
-        else
-          git clone https://github.com/nvim-lua/kickstart.nvim.git nvim
-        fi
-      description: Install nvim-kickstart
-      quiet: true
-      stdout: true
+- clean: ['~']
 
 - link:
-    ~/.config/nvim: nvim
-    ~/.gemrc: ./config/gemrc
-    ~/.gitconfig: ./config/gitconfig
-    ~/.gitignore_global: ./config/gitignore_global
-    ~/.irbrc: ./config/irbrc
+    ~/.config:
+        create: true
+        glob: true
+        path: config/*
+    ~/.editorconfig: dotfiles/editorconfig
+    ~/.gemrc: dotfiles/gemrc
+    ~/.gitconfig: dotfiles/gitconfig
+    ~/.gitignore_global: dotfiles/gitignore_global
+    ~/.irbrc: dotfiles/irbrc
+    ~/.zshrc: dotfiles/zshrc
     ~/.oh-my-zsh/custom/plugins/tschmidt:
-      create: true
-      path: ohmyzsh/plugins/tschmidt
-    ~/.zshrc: ./config/zshrc
+        create: true
+        path: dotfiles/ohmyzsh/plugins/tschmidt

@@ -1,0 +1,12 @@
+{
+  "Allowed params": {
+    "prefix": "allowed",
+    "body": [
+      "def allowed_params",
+      "\tparams.require(:${1:model}).permit(",
+      "\t\t${2:attributes}",
+      "\t)",
+      "end"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "custom-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": ["ruby"],
+        "path": "./languages/ruby.json"
+      },
+      {
+        "language": ["ruby"],
+        "path": "./languages/frameworks/rails.json"
+      }
+    ]
+  }
+}
