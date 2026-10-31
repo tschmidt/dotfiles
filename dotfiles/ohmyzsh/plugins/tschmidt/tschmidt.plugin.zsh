@@ -20,6 +20,7 @@ function dirtouch {
   mkdir -p "$(dirname $1)" && touch "$1"
 }
 
+alias foredev='bundle exec foreman start -f ./Procfile.dev'
 alias ggpush='git push -u origin $(git_current_branch)'
 alias main='git checkout main'
 alias resource='source ~/.zshrc'
